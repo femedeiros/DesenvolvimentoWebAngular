@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-sm-6">
+                <app-progresso [progresso]="progresso"></app-progresso>
+                <!-- Aqui está instanciando o componente e passando -->
+            </div> <!-- a property 'progresso' do painelcomponent p/ progressocomponent-->
+            <div class="col-sm-6">
+                <div class="d-flex justify-content-end">
+                    <app-tentativas [tentativasIncorretas]="tentativasIncorretas"></app-tentativas>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h6>{{ instrucao }}</h6>
+                <p> {{ rodadaFrase.fraseEng }} </p>
+
+                <div class="form-group">
+                    <textarea rows="3" class="form-control" [value]="resposta"
+                        (input)="atualizaResposta($event)"></textarea>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-end">
+                    <button class="button" class="btn btn-primary" (click)="verificarResposta()">Verificar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
